@@ -186,7 +186,7 @@ patch -p1 arch/arm/mach-sunxi/sunxi.c b/arch/arm/mach-sunxi/sunxi.c < "onde vc s
 patch -Np1 -i /root/cubie/openwrt/target/linux/sunxi/patches-3.12/176-add-dt-rtc-for-sun4i-7i.patch
 
 
-# ###########REPOSITORI RASPI######################
+# #REPOSITORI RASPI #
 
 deb http://raspbian.ufms.br/raspbian/ wheezy main
 deb-src http://raspbian.ufms.br/raspbian/ wheezy main
