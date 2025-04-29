@@ -101,7 +101,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=/mnt modules_i
 **lembre de habilitar a segunda opção de suporte a carregamento de módulos do kernel, senão vc só trabalha com módulos internos, não consegue fazer módulos externos e trabalhar com o modprobe**
 
 # Compilando 2
-**Documentos http://linux-sunxi.org/Mainline_Kernel_Howto**
+*Documentos http://linux-sunxi.org/Mainline_Kernel_Howto*
 
 # Compila Kernel e dtbs
 
