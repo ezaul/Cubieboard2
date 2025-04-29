@@ -3,7 +3,7 @@ How to compile for Cubieboard2 in 2012
 
 
 # Cluster #
-Propagar comando
+**Propagar comando**
 for a in $(echo {2..7}); do ssh cubie$a "echo cpu0 > /sys/class/leds/green\:ph20\:led1/trigger &"; done
 
 
@@ -57,7 +57,7 @@ git clone git://github.com/linux-sunxi/linux-sunxi.git -b sunxi-devel linux-sunx
 git clone git://github.com/linux-sunxi/linux-sunxi.git -b experimental/sunxi-3.10 linux-sunxi-3.10
 
 # Git XEN-ARM
-#Repositorio do sun7i_xen
+**Repositorio do sun7i_xen**
 git clone -b sun7i_xen_domU https://github.com/bjzhang/linux-allwinner.git
 
 # Compilando KERNEL
@@ -79,12 +79,12 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- LOADADDR=0x40008000 uImage modu
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=/mnt modules_install
 
 # Dicas do DEFCONFIG 
-os defconfig tem que ir catando
-aí copia pra dentro do fork do kernel como .config
-lembre de habilitar a segunda opção de suporte a carregamento de módulos do kernel, senão vc só trabalha com módulos internos, não consegue fazer módulos externos e trabalhar com o modprobe
+**os defconfig tem que ir catando**
+**aí copia pra dentro do fork do kernel como .config**
+**lembre de habilitar a segunda opção de suporte a carregamento de módulos do kernel, senão vc só trabalha com módulos internos, não consegue fazer módulos externos e trabalhar com o modprobe**
 
 # Compilando 2
-#Documentos http://linux-sunxi.org/Mainline_Kernel_Howto
+**Documentos http://linux-sunxi.org/Mainline_Kernel_Howto**
 
 # Compila Kernel e dtbs
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- multi_v7_defconfig
@@ -117,7 +117,7 @@ dd if=u-boot.bin of=/dev/sdb bs=1024 seek=32
 
 # Criar um BOOT.CMD - BOOT.SCR##
 
-vi boot.cmd
+vim boot.cmd
 setenv bootargs console=tty0 console=ttyS0,115200 hdmi.audio=EDID:0 disp.screen0_output_mode=EDID:1280x800p60 root=/dev/mmcblk0p1 rootfstype=ext4 rootwait panic=10
 ext4load mmc 0 0x46000000 boot/uImage
 ext4load mmc 0 0x49000000 boot/cubie2.dtb
@@ -125,7 +125,7 @@ env set fdt_high ffffffff
 bootm 0x46000000 - 0x49000000
 
 # Opção 2
-vi boot.cmd
+vim boot.cmd
 setenv bootargs console=tty0 console=ttyS0,115200 hdmi.audio=EDID:0 disp.screen0_output_mode=EDID:1280x800p60 root=/dev/mmcblk0p1 rootwait panic=10
 fatload mmc 0 0x48000000 uImage
 fatload mmc 0 0x49000000 cubie2.dtb
@@ -173,7 +173,7 @@ echo "T0:2345:respawn:/sbin/getty -L ttyS0 115200 vt100" >> etc/inittab
 
 # Copiar uImage para o diretorio /boot desse rootfs
 
-usado somente se tiver compilado com MODULOS
+**usado somente se tiver compilado com MODULOS**
 
 make C <dir do kernel> INSTALL_MOD_PATH=$(pwd) ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf modules_install
 
@@ -186,7 +186,7 @@ patch -p1 arch/arm/mach-sunxi/sunxi.c b/arch/arm/mach-sunxi/sunxi.c < "onde vc s
 patch -Np1 -i /root/cubie/openwrt/target/linux/sunxi/patches-3.12/176-add-dt-rtc-for-sun4i-7i.patch
 
 
-# #REPOSITORI RASPI #
+# REPOSITORI RASPI #
 
 deb http://raspbian.ufms.br/raspbian/ wheezy main
 deb-src http://raspbian.ufms.br/raspbian/ wheezy main
@@ -196,14 +196,14 @@ deb http://archive.raspberrypi.org/debian wheezy main
 
 
 # Erro
-#spl: not an uImage at 1600#
+**spl: not an uImage at 1600**
 
 env set fdt_high ffffffff 
 ou
 saveenv set fdt_high ffffffff
 
 
-#  Syncronizar #
+#  Syncronizar
 vi diretorios.txt
 /mnt/*
 
