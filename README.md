@@ -4,6 +4,7 @@ How to compile for Cubieboard2 in 2012
 
 # Cluster #
 **Propagar comando**
+
 for a in $(echo {2..7}); do ssh cubie$a "echo cpu0 > /sys/class/leds/green\:ph20\:led1/trigger &"; done
 
 
