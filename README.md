@@ -203,13 +203,12 @@ ou
 saveenv set fdt_high ffffffff
 
 
-# #################### Syncronizar ####################
+#  Syncronizar #
 vi diretorios.txt
 /mnt/*
 
 rsync -avc --exclude-from=diretorios.txt / /mnt
 
-# ######################################################################
 ### Clonar o HD físico em /dev/sda para o outro hd físico em /dev/sdb: ##
 dd if=/dev/sda of=/dev/sdb bs=4096 conv=notrunc,noerror
 
