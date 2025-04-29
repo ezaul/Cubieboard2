@@ -239,9 +239,9 @@ echo "T0:2345:respawn:/sbin/getty -L ttyS0 115200 vt100" >> etc/inittab
 
 # Copiar uImage para o diretorio /boot desse rootfs
 
-**usado somente se tiver compilado com MODULOS**
+*usado somente se tiver compilado com MODULOS*
 
-make C <dir do kernel> INSTALL_MOD_PATH=$(pwd) ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf modules_install
+make C <dirdokernel> INSTALL_MOD_PATH=$(pwd) ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf modules_install
 
 tar --exclude=qemu-arm-static -cf - . | tar -C /mnt -xvf -
 
